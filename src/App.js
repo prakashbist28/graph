@@ -4,7 +4,9 @@ import Chart from './components/Chart';
 import Navbar from './components/Navbar';
 import Profile from './components/Profile';
 import Data from './components/Data';
+
 function App() {
+
   return (
     <div className='flex flex-col lg:flex-row'>
       <div className=' w-[5%]'>

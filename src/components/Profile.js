@@ -17,7 +17,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="flex flex-col lg:bg-gray-200 bg-white pl-14  lg:pl-0 lg:items-center w-screen lg:w-[100%] h-screen">
+    <div className="flex flex-col lg:bg-gray-200 bg-white pl-14  lg:pl-0 lg:items-center w-screen lg:w-[100%] lg:h-screen">
       <div className=" pt-10 flex flex-row ">
         <img className="w-10" src={Logo} alt="img" />
           <div className="flex flex-col flex-grow">

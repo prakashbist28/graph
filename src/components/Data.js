@@ -12,7 +12,7 @@ const Data = () => {
 
 
   return (
-    <div className="felx flex-col">
+    <div className="felx flex-col pt-[20px]">
       <div className="bg-gray-100">
         <h1 className=" font-bold text-[18px]">Retirement Strategy</h1>
         <h2 className="font-semibold text-[14px]"> Employee Contribution </h2>
