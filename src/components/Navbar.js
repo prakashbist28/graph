@@ -14,7 +14,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className='flex bottom-0 lg:relative fixed flex-row lg:flex-col h-[50px] lg:h-screen w-screen lg:w-[100%] items-center justify-between bg-white'>
+    <nav className='flex bottom-2 lg:relative fixed flex-row lg:flex-col h-[50px] lg:h-screen w-screen lg:w-[100%] items-center justify-between bg-white'>
       <img className='pt-4 w-[30px] hidden lg:flex ' src={Logo} alt='logo' />
       
       <div className='order-last pr-10 lg:pr-0 lg:order-none lg:pt-10 text-[25px] '>
