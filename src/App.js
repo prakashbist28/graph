@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import Chart from './components/Chart';
+import Navbar from './components/Navbar';
+import Profile from './components/Profile';
+import Data from './components/Data';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='flex flex-col lg:flex-row'>
+      <div className=' w-[5%]'>
+        <Navbar />
+      </div>
+      <div className='w-[24%] '>
+        <Profile />
+      </div>
+      <div className='w-[45%]'>
+        <Chart />
+      </div>
+      <div className='w-[24%]'>
+        <Data />
+      </div>
     </div>
+
   );
 }
 
