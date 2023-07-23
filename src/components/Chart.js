@@ -89,7 +89,7 @@ const Chart = () => {
       <div className="pt-12">
         <h1 className=" text-[18px] font-bold "> Contributions Overtime</h1>
         </div>
-        <div className=" w-[80%] h-[100%] ">
+        <div className=" w-[80%] h-64 ">
         <Bar
   data={userdata}
   options={options}
