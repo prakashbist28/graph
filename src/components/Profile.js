@@ -24,7 +24,7 @@ const Profile = () => {
           <h1 className="font-bold text-[24px] "> Hi Mike,</h1>
           <p className=" font-extralight text-[16px]">Welcome back</p>
           </div>
-          <div className="lg:hidden flex fixed pl-[400px]  text-[40px] pr-10 z-20">
+          <div className="lg:hidden fixed right-0 text-[40px] pr-10 z-10">
           <IoMdNotificationsOutline className=" border-2 rounded-full bg-white"/>
           </div>
         
@@ -57,16 +57,16 @@ const Profile = () => {
 
         <div className="relative pt-6 lg:pt-2 ">
           <button
-            className="bg-blue-600 text-white rounded-lg p-2 flex text-center justify-center items-center w-[100%]"
+            className="bg-blue-600 text-white rounded-lg p-2 flex text-center justify-center items-center w-[100%] lg:w-[60%]"
             onClick={handleDropdownToggle}
           >I want to
             <span className="text-white pl-3 text-[10px] lg:flex hidden"> &#9660; </span>{" "}
           </button>
           {dropdown && (
-            <div className="absolute top-12 left-0 bg-white border border-gray-300 rounded-lg p-2">
+            <div className="absolute top-12 left-0 w-full lg:w-[60%] bg-white border border-gray-300 rounded-lg p-2">
               <ul>
-                <li onClick={() => handleOptionSelect("Option 1")}>Option 1</li>
-                <li onClick={() => handleOptionSelect("Option 2")}>Option 2</li>
+                <li className=" hover:bg-gray-300 cursor-pointer" onClick={() => handleOptionSelect("Option 1")}>Option 1</li>
+                <li className=" hover:bg-gray-300 cursor-pointer"  onClick={() => handleOptionSelect("Option 2")}>Option 2</li>
               </ul>
             </div>
           )}
