@@ -3,8 +3,14 @@ import { Bar } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 import { useState } from "react";
 import { userData } from "../chartdata";
+import { AiOutlineCaretDown, AiOutlineCaretUp } from "react-icons/ai";
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
 const Chart = () => {
+  const [isOpen, setisOpen] = useState(false);
+  const [input, setInput] = useState("");
+
   const [userdata, setuserdata] = useState({
     labels: userData.map((data) => data.value), //creates array where only years of userdata are present
     datasets: [
@@ -44,6 +50,12 @@ const Chart = () => {
     },
   };
 
+  const handleOptionSelect = (option) => {
+    console.log(`Selected option: ${option}`);
+
+    setisOpen(false);
+  };
+
   return (
     <div className="flex flex-col pl-[55px] lg:pl-[80px] pt-[40px] pr-[30px] w-screen lg:w-[100%] lg:h-screen">
       <div>
@@ -56,28 +68,112 @@ const Chart = () => {
       <div className="flex flex-col lg:flex-row pt-4">
         <div className="flex flex-col border-b-2 border-indigo-500 ">
           <h1 className="font-bold text-[36px]">$300,000</h1>
-          <h3 className="font-normal text-[16px] pb-2 text-gray-400">My Goal</h3>
+          <h3 className="font-normal text-[16px] pb-2 text-gray-400">
+            My Goal
+          </h3>
         </div>
         <div className="flex flex-row justify-between ">
-        <div className="flex flex-col lg:pl-10 pr-6 ">
-          <div className="border-b-2 border-indigo-500">
-            <h1 className="font-bold text-[36px]">59%</h1>
-            <h3 className="font-normal text-[16px] pb-2 text-gray-400">Goal Achieved</h3>
+          <div className="flex flex-col lg:pl-10 pr-6 ">
+            <div className="border-b-2 border-indigo-500">
+              <h1 className="font-bold text-[36px]">59%</h1>
+              <h3 className="font-normal text-[16px] pb-2 text-gray-400">
+                Goal Achieved
+              </h3>
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col lg:pl-10 pr-6 ">
-          <div className="border-b-2 border-indigo-500">
-            <h1 className="font-bold text-[36px]">$300</h1>
-            <h3 className="font-normal text-[16px] pb-2 text-gray-400">Est. Monthly Income</h3>
-          </div>
+          <div className="flex flex-col lg:pl-10 pr-6 ">
+            <div className="border-b-2 border-indigo-500">
+              <h1 className="font-bold text-[36px]">$300</h1>
+              <h3 className="font-normal text-[16px] pb-2 text-gray-400">
+                Est. Monthly Income
+              </h3>
+            </div>
           </div>
         </div>
       </div>
 
       <div className="pt-14">
         <h1 className=" text-[18px] font-bold "> Contributions Overtime</h1>
-        <div className="chart-container w-full h-96 sm:h-64 md:h-80 lg:h-96 xl:h-120">
-        <Bar data={userdata} options={options} />
+        <div className=" w-[80%]">
+          <Bar data={userdata} options={options} />
+        </div>
+      </div>
+
+      <div className="pt-10">
+        <div>
+          <h1 className="text-[18px] font-bold ">
+            How do I compare to my peers?
+          </h1>
+          <h3 className="font-normal text-[15px] pb-2 text-gray-400">
+            These numbers represent current goal achievements
+          </h3>
+        </div>
+        <div className="flex flex-col lg:flex-row pt-4">
+          <div className="flex flex-col pr-4">
+            <div className="flex flex-row items-center  border-b-2 pb-2  ">
+              <h1 className="font-bold">Age:</h1>
+              <select className=" border-2 border-white">
+                <option>Under 30</option>
+                <option>Under 40</option>
+                <option>Under 50</option>
+              </select>
+            </div>
+            <div className="flex flex-row items-center border-b-2 pb-2 ">
+              <h1 className="font-bold">Salary : </h1>
+              <select className=" border-2 border-white">
+                <option>K 20 - k 30</option>
+                <option>K 30 - k 40</option>
+                <option>K 40 - k 50</option>
+              </select>
+            </div>
+            <div className="flex flex-row items-center border-b-2 pb-2">
+              <h1 className="font-bold">Gender : </h1>
+              <select className=" border-2 border-white ">
+                <option>Male</option>
+                <option>Female</option>
+                <option>Others</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="flex flex-row items-center justify-between lg:justify-center lg:pl-6 pt-6 lg:pt-0">
+            <div className="w-[100px] h-[100px] items-center flex flex-col">
+              <CircularProgressbar
+                value={70}
+                text={"70%"}
+                styles={{
+                  trail: { stroke: "#e2fee2" },
+                  path: { stroke: "#00FA9A" },
+                  text: { fill: "black", fontSize: "20px" },
+                }}
+              />
+              <h1 className="">Average</h1>
+            </div>
+            <div className="w-[100px] h-[100px] items-center flex flex-col">
+              <CircularProgressbar
+                value={90}
+                text={"90%"}
+                styles={{
+                  trail: { stroke: "#e2fee2" },
+                  path: { stroke: "#00FA9A" },
+                  text: { fill: "black", fontSize: "20px" },
+                }}
+              />
+              <h1 className="">Top</h1>
+            </div>
+            <div className="w-[100px] h-[100px] items-center flex flex-col">
+              <CircularProgressbar
+                value={56}
+                text={"56%"}
+                styles={{
+                  trail: { stroke: "#e2fee2" },
+                  path: { stroke: "#00FA9A" },
+                  text: { fill: "black", fontSize: "20px" },
+                }}
+              />
+              <h1 className="">Me</h1>
+            </div>
+          </div>
         </div>
       </div>
     </div>

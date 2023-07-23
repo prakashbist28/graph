@@ -18,14 +18,14 @@ const Profile = () => {
 
   return (
     <div className="flex flex-col lg:bg-gray-200 bg-white pl-14  lg:pl-0 lg:items-center w-screen lg:w-[100%] lg:h-screen">
-      <div className=" pt-10 flex flex-row ">
+      <div className=" pt-10 flex flex-row justify-between">
         <img className="w-10" src={Logo} alt="img" />
           <div className="flex flex-col flex-grow">
           <h1 className="font-bold text-[24px] "> Hi Mike,</h1>
           <p className=" font-extralight text-[16px]">Welcome back</p>
           </div>
-          <div className="lg:hidden flex text-[30px] pr-10">
-          <IoMdNotificationsOutline />
+          <div className="lg:hidden flex fixed pl-[400px]  text-[40px] pr-10 z-20">
+          <IoMdNotificationsOutline className=" border-2 rounded-full bg-white"/>
           </div>
         
       </div>
@@ -75,7 +75,7 @@ const Profile = () => {
 
         <div className=" flex flex-col pt-12">
         <div className=" bg-gray-200 lg:bg-inherit rounded-lg pt-4 lg:pt-0 pr-4 lg:pr-0 pl-4 lg:pl-0 pb-4 lg:pb-0 w-[110%] lg:w-full">
-          <h1 className="font-bold text-[20px] lg:text-[16px] tracking-wide"> Recent Transactions </h1>
+          <h1 className="font-bold text-[20px] lg:text-[18px] tracking-wide"> Recent Transactions </h1>
           <div className=" border-b-2 border-gray-300 pb-3 pt-4 ">
             <h3 className=" font-extralight text-[14px] lg:text-[12px] text-gray-400 tracking-wide">
               2020-08-07
