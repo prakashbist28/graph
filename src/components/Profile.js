@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../assets/logo.png";
+import img from '../assets/per.png'
 import { useState } from "react";
 import { IoMdNotificationsOutline } from "react-icons/io";
 
@@ -18,9 +18,9 @@ const Profile = () => {
 
   return (
     <div className="flex flex-col lg:bg-gray-100 bg-white pl-14  lg:pl-0 lg:items-center w-screen lg:w-[100%] lg:h-screen">
-      <div className=" pt-10 flex flex-row justify-between">
-        <img className="w-10" src={Logo} alt="img" />
-        <div className="flex flex-col flex-grow">
+      <div className=" pt-10 flex flex-row ">
+        <img className="w-20 " src={img} alt="img" />
+        <div className="flex flex-col pl-2">
           <h1 className="font-bold text-[24px] "> Hi Mike,</h1>
           <p className=" font-extralight text-[16px]">Welcome back</p>
         </div>
@@ -87,7 +87,7 @@ const Profile = () => {
         </div>
       </div>
 
-      <div className=" flex flex-col pt-12 items-start">
+      <div className=" flex flex-col pt-12 items-start lg:items-center">
         <div className=" bg-gray-200 lg:bg-inherit rounded-lg pt-4 lg:pt-0 pr-4 lg:pr-0 pl-4 lg:pl-0 pb-4 lg:pb-0 w-[90%] lg:w-full ">
           <h1 className="font-bold text-[20px] lg:text-[18px] tracking-wide">
             {" "}

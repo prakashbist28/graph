@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import './scroll.css'
 
 const Data = () => {
   const [value, setValue] = useState(12);

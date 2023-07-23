@@ -32,18 +32,38 @@ const Chart = () => {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
+    
     scales: {
       x: {
         stacked: true,
+        ticks: {
+          font: {
+            size: 8,
+          },
+        },
       },
       y: {
         beginAtZero: true,
         stacked: false,
         ticks: {
+          font: {
+            size: 12,
+          },
           stepSize: 100,
           callback: function (value, index, values) {
             return "$" + value;
           },
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        labels: {
+          font: {
+            size: 10, 
+          },
+          pointStyle: 'circle', // Set the point style to circle (default is 'rect')
+          usePointStyle: true,
         },
       },
     },
