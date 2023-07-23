@@ -7,8 +7,6 @@ import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
 const Chart = () => {
-  const [isOpen, setisOpen] = useState(false);
-  const [input, setInput] = useState("");
 
   const [userdata, setuserdata] = useState({
     labels: userData.map((data) => data.value), 
@@ -32,6 +30,8 @@ const Chart = () => {
   });
 
   const options = {
+    responsive: true,
+    maintainAspectRatio: false,
     scales: {
       x: {
         stacked: true,
@@ -88,17 +88,17 @@ const Chart = () => {
 
       <div className="pt-12">
         <h1 className=" text-[18px] font-bold "> Contributions Overtime</h1>
-        <div className=" w-[100%]">
+        </div>
+        <div className=" w-[80%] h-[100%] ">
         <Bar
   data={userdata}
   options={options}
-  width="100%"
-  height="50px"
+  height='150px'
 />
         </div>
-      </div>
 
-      <div className="pt-6">
+
+      <div className="pt-10">
         <div>
           <h1 className="text-[18px] font-bold ">
             How do I compare to my peers?
@@ -111,22 +111,22 @@ const Chart = () => {
           <div className="flex flex-col pr-4">
             <div className="flex flex-row items-center  border-b-2 pb-2  ">
               <h1 className="font-bold">Age:</h1>
-              <select className=" border-2 border-white">
+              <select className=" border-2 border-white pl-6">
                 <option>Under 30</option>
                 <option>Under 40</option>
                 <option>Under 50</option>
               </select>
             </div>
             <div className="flex flex-row items-center border-b-2 pb-2 ">
-              <h1 className="font-bold">Salary : </h1>
-              <select className=" border-2 border-white">
+              <h1 className="font-bold">Salary: </h1>
+              <select className=" border-2 border-white pl-2">
                 <option>K 20 - k 30</option>
                 <option>K 30 - k 40</option>
                 <option>K 40 - k 50</option>
               </select>
             </div>
-            <div className="flex flex-row items-center border-b-2 pb-2">
-              <h1 className="font-bold">Gender : </h1>
+            <div className="flex flex-row items-center border-b-2 pb-2 ">
+              <h1 className="font-bold">Gender: </h1>
               <select className=" border-2 border-white ">
                 <option>Male</option>
                 <option>Female</option>
