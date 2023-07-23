@@ -18,7 +18,7 @@ function App() {
       <div className='w-[45%]'>
         <Chart />
       </div>
-      <div className='w-[24%]'>
+      <div className='w-[24%] '>
         <Data />
       </div>
     </div>
