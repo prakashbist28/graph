@@ -7,7 +7,7 @@ const Data = () => {
   const [age,setage] = useState(65);
 
   return (
-    <div className="felx flex-col pt-[250px] lg:pt-10 h-screen w-screen lg:w-[80%] pl-4 pr-6 lg:pr-0 lg:pl-0 ">
+    <div className="felx flex-col pt-14 lg:pt-10 h-screen lg:h-screen w-screen lg:w-[80%] pl-4 pr-6 lg:pr-0 lg:pl-0 ">
       <div className="bg-gray-100 p-4 rounded-xl">
         <h1 className=" font-bold text-[18px]">Retirement Strategy</h1>
 

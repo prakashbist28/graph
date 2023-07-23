@@ -51,7 +51,7 @@ const Chart = () => {
 
 
   return (
-    <div className="flex flex-col pl-[55px] lg:pl-[80px] pt-[40px] pr-[30px] w-screen h-full lg:w-[100%] lg:h-screen">
+    <div className="flex flex-col pl-[55px] lg:pl-[80px] pt-16 pr-[30px] w-screen h-full lg:w-[100%] lg:h-screen">
       <div>
         <h1 className="font-bold text-[18px] text-indigo-500">
           Retirement Income{" "}
