@@ -3,7 +3,6 @@ import { Bar } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 import { useState } from "react";
 import { userData } from "../chartdata";
-import { AiOutlineCaretDown, AiOutlineCaretUp } from "react-icons/ai";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
@@ -12,7 +11,7 @@ const Chart = () => {
   const [input, setInput] = useState("");
 
   const [userdata, setuserdata] = useState({
-    labels: userData.map((data) => data.value), //creates array where only years of userdata are present
+    labels: userData.map((data) => data.value), 
     datasets: [
       {
         label: "Employer",
@@ -50,14 +49,9 @@ const Chart = () => {
     },
   };
 
-  const handleOptionSelect = (option) => {
-    console.log(`Selected option: ${option}`);
-
-    setisOpen(false);
-  };
 
   return (
-    <div className="flex flex-col pl-[55px] lg:pl-[80px] pt-[40px] pr-[30px] w-screen h-screen lg:w-[100%] lg:h-screen">
+    <div className="flex flex-col pl-[55px] lg:pl-[80px] pt-[40px] pr-[30px] w-screen h-full lg:w-[100%] lg:h-screen">
       <div>
         <h1 className="font-bold text-[18px] text-indigo-500">
           Retirement Income{" "}
@@ -92,14 +86,19 @@ const Chart = () => {
         </div>
       </div>
 
-      <div className="pt-14">
+      <div className="pt-12">
         <h1 className=" text-[18px] font-bold "> Contributions Overtime</h1>
-        <div className=" w-[80%]">
-          <Bar data={userdata} options={options} />
+        <div className=" w-[100%]">
+        <Bar
+  data={userdata}
+  options={options}
+  width="100%"
+  height="50px"
+/>
         </div>
       </div>
 
-      <div className="pt-10">
+      <div className="pt-6">
         <div>
           <h1 className="text-[18px] font-bold ">
             How do I compare to my peers?
