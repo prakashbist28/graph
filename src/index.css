@@ -19,3 +19,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.active {
+  border-bottom: 3px rgb(60, 103, 234) solid;
+  border-radius: 10px;
+  color :rgb(88, 88, 248);
+  background-color: rgb(182, 204, 253);
+}

@@ -1,26 +1,31 @@
-
 import './App.css';
-import Chart from './components/Chart';
+import Chart from './components/Blogs';
 import Navbar from './components/Navbar';
-import Profile from './components/Profile';
-import Data from './components/Data';
+import Profile from './components/Services';
+import Data from './components/Contact';
+import Home from './components/About';
+import Footer from './components/Footer';
 
 function App() {
 
   return (
-    <div className='flex flex-col lg:flex-row '>
-      <div className=' w-[5%]'>
+    <div className='flex flex-col '>
+      <div className=' '>
         <Navbar />
       </div>
-      <div className='w-[24%] '>
+      <div id='Home' className=' '>
+        <Home />
+      </div>
+      <div id='Services' className=' '>
         <Profile />
       </div>
-      <div className='w-[45%]'>
+      <div id='Blogs' className=''>
         <Chart />
       </div>
-      <div className='w-[24%] '>
+      <div id='Contact' className=''>
         <Data />
       </div>
+      <Footer />
     </div>
 
   );

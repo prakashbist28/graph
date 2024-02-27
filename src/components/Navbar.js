@@ -1,45 +1,125 @@
-import React from 'react'
-import {BiHomeAlt, BiSearch} from 'react-icons/bi'
-import {BsPerson, BsCardList} from 'react-icons/bs'
-import {RiProfileLine} from 'react-icons/ri'
-import {IoMdNotificationsOutline,IoIosLogOut} from 'react-icons/io'
-import Logo from '../assets/logo.png'
-import { useState } from 'react'
+import React from "react";
+import { useState } from "react";
+import { Link } from "react-scroll";
+import { TiInputChecked } from "react-icons/ti";
+import { TiThMenu } from "react-icons/ti";
 
 const Navbar = () => {
   const [select, setselect] = useState(null);
+  let [open, setOpen] = useState(false);
 
-  const handleClick = (iconname) =>{
-    setselect(iconname)
-  }
+  const handleClick = (iconname) => {
+    setselect(iconname);
+  };
 
   return (
-    <nav className='flex bottom-0 lg:relative fixed flex-row lg:flex-col h-[50px] lg:h-screen w-screen lg:w-[100%] items-center justify-between bg-white'>
-      <img className='pt-4 w-[30px] hidden lg:flex ' src={Logo} alt='logo' />
-      
-      <div className='order-last pr-10 lg:pr-0 lg:order-none lg:pt-10 text-[25px] '>
-      <BiSearch className={`${select === "Search" ? "bg-blue-500 rounded-lg h-[100%] w-[100%] p-2 text-center text-white" : " hover:text-blue-600"}`} onClick={()=>handleClick('Search')}/>
+    <nav className="flex flex-col md:flex-row fixed w-full h-[10%] justify-between bg-white z-[10] shadow-xl">
+      <div className="flex ml-10 mt-5 flex-row justify-between">
+        <div className="flex flex-row">
+          <TiInputChecked className="text-[40px] md:text-[60px]  text-blue-500" />
+          <h1 className="flex flex-col text-[25px] md:text-[35px] font-bold leading-5 md:leading-7">
+            {" "}
+            Bluetick{" "}
+            <span className="text-[16px] md:text-[25px] font-light">
+              Consultants
+            </span>
+          </h1>
+        </div>
+        <button onClick={() => setOpen(!open)}>
+          <TiThMenu
+            name={open ? "close" : "menu"}
+            className="text-blue-400 text-[40px] md:hidden"
+          />
+        </button>
       </div>
-      <div className='pl-[40px] lg:pl-0 lg:pt-10 text-[25px]'>
-      <BiHomeAlt className={`${select === "Home" ? "bg-blue-500 rounded-lg h-[100%] w-[100%] p-2 text-center text-white" : " hover:text-blue-600"}`} onClick={()=>handleClick('Home')}/>
-      </div>
-      <div className='lg:pt-5 text-[25px]'>
-      <BsCardList className={`${select === "Card" ? "bg-blue-500 rounded-lg h-[100%] w-[100%] p-2 text-center text-white" : "hover:text-blue-600"}`} onClick={()=>handleClick('Card')}/>
-      </div>
-      <div className='lg:pt-5 text-[25px]'>
-      <RiProfileLine  className={`${select === "Chart" ? "bg-blue-500 rounded-lg h-[100%] w-[100%] p-2 text-center text-white" : "hover:text-blue-600"}`} onClick={()=>handleClick('Chart')}/>
-      </div >
-      <div className='lg:pt-5 font-bold text-[25px]'>
-      <BsPerson  className={`${select === "Person" ? "bg-blue-500 rounded-lg h-[100%] w-[100%] p-2 text-center text-white" : "hover:text-blue-600"}`} onClick={()=>handleClick('Person')}/>
-      </div>
-      <div className='hidden lg:flex lg:pt-[360px] text-[25px]'>
-      <IoMdNotificationsOutline className={`${select === "Notification" ? "bg-blue-500 rounded-lg h-[100%] w-[100%] p-2 text-center text-white" : "hover:text-blue-600"}`} onClick={()=>handleClick('Notification')} />
-      </div>
-      <div className='hidden lg:flex pt-4 pb-6 text-[25px]  '>
-      <IoIosLogOut className={`${select === "Exit" ? "bg-blue-500 rounded-lg h-[100%] w-[100%] p-2 text-center text-white" : "hover:text-blue-600"}`} onClick={()=>handleClick('Exit')}/>
-      </div>
-    </nav>
-  )
-}
 
-export default Navbar
+      <ul
+        className={`order-last absolute w-full text-center md:text-justify md:w-auto left-0 md:shadow-sm shadow-xl shadow-blue-400 md:static flex-col md:flex-row md:z-auto z-[10] bg-white font-semibold flex gap-8 mt-5 text-[12px] md:text-[24px] lg:text-[30px] mr-20 transition-all duration-500 ease-in ${
+          open ? "top-20 " : "top-[-400px]"
+        }`}
+      >
+        <Link
+          to="Home"
+          activeClass="active"
+          offset={-100}
+          spy={true}
+          smooth={true}
+          duration={500}
+        >
+          <li
+            className={`${
+              select === "Home"
+                ? "  cursor-pointer rounded-lg p-1 text-center "
+                : "p-1 hover:cursor-pointer hover:text-blue-300"
+            }`}
+            onClick={() => handleClick("Home")}
+          >
+            Home
+          </li>
+        </Link>
+
+        <Link
+          to="Services"
+          activeClass="active"
+          offset={-100}
+          spy={true}
+          smooth={true}
+          duration={500}
+        >
+          <li
+            className={`${
+              select === "Services"
+                ? " cursor-pointer rounded-lg p-1 text-center "
+                : "p-1 hover:cursor-pointer hover:text-blue-300"
+            }`}
+            onClick={() => handleClick("Services")}
+          >
+            Services
+          </li>
+        </Link>
+
+        <Link
+          to="Blogs"
+          activeClass="active"
+          offset={-100}
+          spy={true}
+          smooth={true}
+          duration={500}
+        >
+          <li
+            className={`${
+              select === "Blogs"
+                ? " rounded-lg p-1 cursor-pointer text-center "
+                : "p-1 hover:cursor-pointer hover:text-blue-300"
+            }`}
+            onClick={() => handleClick("Blogs")}
+          >
+            Blogs
+          </li>
+        </Link>
+
+        <Link
+          to="Contact"
+          activeClass="active"
+          offset={-80}
+          spy={true}
+          smooth={true}
+          duration={500}
+        >
+          <li
+            className={`${
+              select === "Contact"
+                ? " rounded-lg p-1 cursor-pointer text-center "
+                : "p-1 hover:cursor-pointer hover:text-blue-300"
+            } `}
+            onClick={() => handleClick("Contact")}
+          >
+            Contact
+          </li>
+        </Link>
+      </ul>
+    </nav>
+  );
+};
+
+export default Navbar;
